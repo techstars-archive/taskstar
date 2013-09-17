@@ -12,3 +12,13 @@
  *= require foundation_and_overrides
  *= require_tree .
  */
+
+#flash .alert-box {
+  text-align: center;
+}
+
+#flash .alert-box .close {
+  position: relative;
+  top: 0;
+  right: 0;
+}

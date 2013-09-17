@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="large-4 large-centered columns panel">
+    <h2 class="task-title"><%= @task.title %></h2> for <b><%= @task.team.name %></b>
+    <p>
+      <%= @task.body %>
+    </p>
+    <div class="due-by">Due by <%= @task.complete_by.strftime("%A %B %e, %Y") %></div class="due-by">
+    <% if user_signed_in? %>
+      <div class="row">
+        <div class="large-12 columns set-status">
+          <%= button_to "Work On This", { action: "set_as_in_progress", id: @task.id },
+                                method: :put, class: "button small success radius" %>
+
+          <%= button_to "Done", { action: "set_as_done", id: @task.id },
+                                method: :put, class: "button small alert radius" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

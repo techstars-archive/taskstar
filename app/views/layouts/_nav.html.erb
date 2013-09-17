@@ -1,0 +1,32 @@
+<nav class="top-bar">
+  <ul class="title-area">
+    <li class="name">
+      <h1><%= link_to "Taskstar", root_path %></h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+  <section class="top-bar-section">
+    <ul class="right">
+      <li class="divider"></li>
+      <li><%= link_to "Finished Tasks", done_path %></li>
+      <li class="divider"></li>
+      <li><%= link_to new_user_session_path do %>
+            <i class="icon-signin"></i> Sign In
+        <% end %></li>
+      <li class="divider"></li>
+      <% if user_signed_in? %>
+        <li class="has-dropdown"><a href="#"><%= current_user.name %></a>
+          <ul class="dropdown">
+            <li><%= link_to edit_user_registration_path do %>
+              <i class="icon-user"></i> Profile
+            <% end %></li>
+            <li><%= link_to  destroy_user_session_path, method: "delete" do %>
+              <i class="icon-signout"></i> Sign Out
+            <% end %></li>
+            <li class="divider"></li>
+          </ul>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+</nav>

@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="large-6 large-centered columns">
+    <% @done.each do |task| %>
+      <div class="panel">
+        <%= link_to task_path(task) do %>
+          <h5><%= task.title %> - <%= task.team.name %></h5>
+        <% end %>
+        <p><%= truncate(task.body, length: 140, separator: " ") %></p>
+        <div>Finished by: <b><%= task.user.name %></b></div>
+      </div>
+    <% end %>
+  </div>
+</div>

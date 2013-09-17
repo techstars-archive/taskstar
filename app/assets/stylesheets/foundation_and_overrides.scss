@@ -137,7 +137,7 @@ $default-float: left;
 // Grid Variables
 //
 
-// $row-width: emCalc(1000);
+$row-width: 95%;
 // $column-gutter: emCalc(30);
 // $total-columns: 12;
 
@@ -499,12 +499,12 @@ $default-float: left;
 // $alert-border-style: solid;
 // $alert-border-width: 1px;
 // $alert-border-color: darken($primary-color, $alert-function-factor);
-// $alert-bottom-margin: emCalc(20);
+$alert-bottom-margin: 0;
 
 // We use these to style the close buttons
 
 // $alert-close-color: #333;
-// $alert-close-position: emCalc(5);
+$alert-close-position: emCalc(5);
 // $alert-close-font-size: emCalc(22);
 // $alert-close-opacity: 0.3;
 // $alert-close-opacity-hover: 0.5;

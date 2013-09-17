@@ -1,4 +1,10 @@
 Hackstar::Application.routes.draw do
+  root "tasks#index"
+  devise_for :users
+  resources :tasks
+  put "tasks/set_as_in_progress/:id" => "tasks#set_as_in_progress"
+  put "tasks/set_as_done/:id" => "tasks#set_as_done"
+  get "done" => "tasks#done", as: :done
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -39,7 +45,7 @@ Hackstar::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'

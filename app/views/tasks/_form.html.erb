@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="large-4 large-centered columns">
+    <%= form_for @task, html: {} do |f| %>
+      <%= f.label :title, "Title" %>
+      <%= f.text_field :title %>
+      <%= form_errors_for @task, :title %>
+
+      <%= f.label :body, "Body" %>
+      <%= f.text_area :body %>
+      <%= form_errors_for @task, :body %>
+
+      <%= f.label :complete_by, "Complete By" %>
+      <%= f.date_field :complete_by %>
+      <%= form_errors_for @task, :complete_by %>
+
+      <%= f.collection_select :team_id, @teams, :id, :name, { prompt: true }, { class: "dropdown" } %>
+      <%= form_errors_for @task, :team_id %>
+
+      <%= f.submit "Submit", data: { disable_with: 'Submiting...' }, class: "button radius" %>
+    <% end %>
+  </div>
+</div>
