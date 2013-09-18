@@ -5,6 +5,7 @@
       <%= @task.body %>
     </p>
     <div class="due-by">Due by <%= @task.complete_by.strftime("%A %B %e, %Y") %></div class="due-by">
+    <p><b><%= @task.user.nil? ? "Nobody" : @task.user.name %></b> is working on this.</p>
     <% if user_signed_in? %>
       <div class="row">
         <div class="large-12 columns set-status">
