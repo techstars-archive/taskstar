@@ -22,3 +22,7 @@
   top: 0;
   right: 0;
 }
+
+.name h1 img {
+  margin-bottom: 5px;
+}

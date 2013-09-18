@@ -3,11 +3,11 @@ class TasksController < ApplicationController
   before_filter :get_teams, only: [:new, :create, :edit, :update]
   def index
     @tasks = Task.includes(:team).where(status: nil).order("created_at DESC")
-    @in_progress = Task.in_progress.order("created_at DESC")
+    @in_progress = Task.includes(:team, :user).in_progress.order("created_at DESC")
   end
 
   def done
-    @done = Task.done
+    @done = Task.includes(:team, :user).done
   end
 
   def show
