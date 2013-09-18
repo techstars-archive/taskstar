@@ -1,6 +1,6 @@
 # Taskstar
 
-Taskstar is an app developed and used internally at Techstars Seattle 2013.
+Taskstar is an app developed and used internally at [Techstars Seattle 2013](http://www.techstars.com/the-2013-seattle-class/).
 
 Its purpose is to allow the Techstars teams to add new tasks to a queue, that the Hackstars can then use to find out what they can help with.
 
