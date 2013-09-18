@@ -3,7 +3,7 @@
     <% @done.each do |task| %>
       <div class="panel">
         <%= link_to task_path(task) do %>
-          <div class="task-title-link"><strong><%= task.title %></strong> for <%= task.team.name %></div>
+          <div class="task-title"><strong><%= task.title %></strong> for <%= task.team.name %></div>
         <% end %>
         <p><%= truncate(task.body, length: 140, separator: " ") %></p>
         <div>Finished by: <b><%= task.user.name %></b></div>
