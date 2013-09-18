@@ -13,6 +13,7 @@
       <%= f.date_field :complete_by %>
       <%= form_errors_for @task, :complete_by %>
 
+      <%= f.label :team_id, "Team" %>
       <%= f.collection_select :team_id, @teams, :id, :name, { prompt: true }, { class: "dropdown" } %>
       <%= form_errors_for @task, :team_id %>
 

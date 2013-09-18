@@ -20,10 +20,10 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     if @task.save
-      flash[:notice] = "new task"
+      flash[:notice] = "A new task has been added."
       redirect_to root_path
     else
-      flash[:alert] = "new task failed"
+      flash[:alert] = "There was a problem adding a new task."
       render "new"
     end
   end
@@ -33,17 +33,17 @@ class TasksController < ApplicationController
 
   def update
     if @task.update_attributes(task_params)
-      flash[:notice] = "task updated"
+      flash[:notice] = "The task has been updated."
       redirect_to root_path
     else
-      flash[:alert] = "task update failed"
+      flash[:alert] = "There was a problem updating the task."
       render "edit"
     end
   end
 
   def destroy
     @task.destroy
-    flash[:notice] = "task deleted"
+    flash[:notice] = "The task has been deleted."
     redirect_to root_path
   end
 
@@ -52,10 +52,10 @@ class TasksController < ApplicationController
     @task.status = "In Progress"
     @task.user = current_user
     if @task.save
-      flash[:notice] = "task set as in progress"
+      flash[:notice] = "The task has been set as in progress."
       redirect_to root_path
     else
-      flash[:alert] = "task update failed"
+      flash[:alert] = "There was a problem setting the status of the task."
       render "show"
     end
   end
@@ -64,10 +64,10 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @task.status = "Done"
     if @task.save
-      flash[:notice] = "task set as done"
+      flash[:notice] = "The task has been set as done."
       redirect_to root_path
     else
-      flash[:alert] = "task update failed"
+      flash[:alert] = "There was a problem setting the status of the task."
       render "show"
     end
   end
