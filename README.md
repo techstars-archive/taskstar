@@ -12,6 +12,21 @@ If the Hackstar chooses to work on a task they click the "Work On This" button, 
 
 After the task has been completed the Hackstar returns to the task description page and marks the task as "Done", which moves the task to the "Finished Tasks" queue.
 
+## Usage
+
+First do a `git clone` of the repo.
+
+Run `bundle install`.
+
+Then add your team names to the `teams` array in `db/seeds.rb`.
+
+Next run `heroku create` then `git push heroku master`.
+
+Once the app has been deployed to heroku run `heroku run rake db:setup`.
+
+And you're done.
+
+
 ## License
 
 Released under the [MIT License](http://www.opensource.org/licenses/MIT).
