@@ -3,6 +3,7 @@ class TaskMailer < ActionMailer::Base
           to: Proc.new { User.pluck(:email) }
 
   def new_task(task)
+    @task = task
     @team = task.team.name
     @title = task.title
     @body = task.body
