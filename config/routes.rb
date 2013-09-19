@@ -1,4 +1,4 @@
-Hackstar::Application.routes.draw do
+Taskstar::Application.routes.draw do
   root "tasks#index"
   devise_for :users
   resources :tasks
