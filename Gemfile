@@ -7,6 +7,7 @@ gem 'pg'
 gem 'jquery-rails'
 gem "devise"
 gem 'rails_12factor'
+gem 'newrelic_rpm'
 
 # Asset Stuff
 gem 'sass-rails', '~> 4.0.0'

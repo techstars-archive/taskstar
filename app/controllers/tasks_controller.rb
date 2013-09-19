@@ -21,6 +21,7 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     if @task.save
       flash[:notice] = "A new task has been added."
+      TaskMailer.new_task(@task).deliver
       redirect_to root_path
     else
       flash[:alert] = "There was a problem adding a new task."
