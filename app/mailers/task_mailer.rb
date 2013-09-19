@@ -1,5 +1,5 @@
 class TaskMailer < ActionMailer::Base
-  default from: "new.message@taskstar.com",
+  default from: "taskstar@techstars.com",
           to: Proc.new { User.pluck(:email) }
 
   def new_task(task)
