@@ -7,7 +7,7 @@ class TasksController < ApplicationController
   end
 
   def done
-    @done = Task.includes(:team, :user).done
+    @done = Task.includes(:team, :user).done.order("updated_at DESC")
   end
 
   def show
@@ -64,6 +64,7 @@ class TasksController < ApplicationController
   def set_as_done
     @task = Task.find(params[:id])
     @task.status = "Done"
+    @task.user ||= current_user
     if @task.save
       flash[:notice] = "The task has been set as done."
       redirect_to root_path
